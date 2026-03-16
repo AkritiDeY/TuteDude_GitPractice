@@ -1,0 +1,68 @@
+<!-- todo.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    h2 { margin-bottom: 5px; color: #333; }
+    p.subtitle { color: #888; font-size: 14px; margin-bottom: 25px; }
+    label { display: block; font-size: 13px; font-weight: bold; color: #555; margin-bottom: 5px; }
+    input, textarea {
+      width: 100%; padding: 10px; margin-bottom: 18px;
+      border: 1px solid #ddd; border-radius: 6px;
+      font-size: 14px; box-sizing: border-box;
+    }
+    textarea { height: 100px; resize: none; }
+    button {
+      width: 100%; padding: 12px; background: #6c63ff;
+      color: white; border: none; border-radius: 6px;
+      font-size: 15px; cursor: pointer;
+    }
+    button:hover { background: #574fd6; }
+    .error {
+      background: #ffe5e5; color: #cc0000;
+      border: 1px solid #cc0000; padding: 10px;
+      border-radius: 6px; margin-bottom: 18px; font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>To-Do List</h2>
+    <p class="subtitle">Add a new item to your to-do list</p>
+
+    {% if error %}
+      <div class="error">⚠ {{ error }}</div>
+    {% endif %}
+
+    <form action="/submittodoitem" method="POST">
+
+      <label>Item Name</label>
+      <input type="text" name="itemName" placeholder="Enter item name" />
+
+      <label>Item Description</label>
+      <textarea name="itemDescription" placeholder="Enter item description"></textarea>
+
+      <button type="submit">Add Item</button>
+
+    </form>
+  </div>
+</body>
+</html>
