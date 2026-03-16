@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 300px;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <p>Today is {{ day_of_week }} and the current time is {{ current_time }}</p>
+  
+  <form action="/submit" method="POST">
+
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Enter your name" />
+
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="Enter your email" />
+
+    
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Enter your password" />
+
+    <label>Message:</label>
+    <textarea name="message" rows="4" placeholder="Enter your message"></textarea>
+
+    <br>
+    <button type="submit">Submit</button>
+
+    <!-- <a href="/view"><button type="button">View Submitted Data</button></a> -->
+
+  </form>
+
+</body>
+</html>
